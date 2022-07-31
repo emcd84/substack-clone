@@ -1,17 +1,21 @@
-#container {
+#topContainer {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0.5em;
+    padding: 1em;
+    border-bottom: 1px solid rgb(237, 237, 237);
 }
 
 #headerContainer {
     display: flex;
-    width: 90%;
     justify-content: center;
+    width: 100%;
 }
 
 #buttonContainer {
+    position: absolute;
+    left: 90%;
     width: 10%;
     display: flex;
     flex-direction: row;
@@ -19,7 +23,6 @@
 
 #headerText {
     font-size: 1.6em;
-    margin-left: 5%;
 }
 
 #subscribeButton, #signInButton {
@@ -39,4 +42,17 @@
 
 #signInButton {
     background-color: white;
+}
+
+#bottomContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.25em;
+    padding: 0.75em;
+}
+
+.bottomText {
+    font-size: 0.9em;
+    font-weight: normal;
 }
