@@ -52,21 +52,15 @@
     border-bottom: 1px solid rgb(237, 237, 237);
 }
 
-.bottomTextDiv {
-    padding: 0.75em 0;
-}
-
 .bottomText {
     font-size: 0.9em;
     font-weight: normal;
     color: black;
     text-decoration: none;
-}
-
-.selectedDiv {
-    border-bottom: 3px solid black;
+    padding: 0.75em 0;
 }
 
 .selectedText {
     font-weight: bold;
+    border-bottom: 3px solid black;
 }
