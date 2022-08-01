@@ -3,8 +3,8 @@ import MenuBar from "../components/MenuBar";
 
 export default function Homepage() {
   return (
-    <div data-testid="Homepage">
-      <MenuBar />
+    <div data-testid='Homepage'>
+      <MenuBar mode='home' />
     </div>
   );
 }
