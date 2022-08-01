@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../styles/MenuBar.module.css";
 import { NavLink } from "react-router-dom";
 
-export default function MenuBar(props) {
+export default function MenuBar() {
   // const subscribeOnClick = () => {
   //   return null;
   // };
