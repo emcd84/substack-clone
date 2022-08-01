@@ -5,7 +5,7 @@ import Homepage from "./Homepage";
 
 describe("Homepage component", () => {
   it("should render MenuBar component", () => {
-    render(<Homepage />);
+    render(<Homepage mode='home' />);
     const HomepageElement = screen.getByTestId("Homepage");
     const MenuBar = screen.getByTestId("MenuBar");
 
