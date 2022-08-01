@@ -49,10 +49,22 @@
     flex-direction: row;
     justify-content: center;
     gap: 1.25em;
-    padding: 0.75em;
+    border-bottom: 1px solid rgb(237, 237, 237);
+}
+
+.bottomTextDiv {
+    padding: 0.75em 0;
 }
 
 .bottomText {
     font-size: 0.9em;
     font-weight: normal;
+}
+
+.selectedDiv {
+    border-bottom: 3px solid black;
+}
+
+.selectedText {
+    font-weight: bold;
 }
