@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/MenuBar.module.css";
+import { Link } from "react-router-dom";
 
 export default function MenuBar(props) {
   // const subscribeOnClick = () => {
@@ -38,20 +39,25 @@ export default function MenuBar(props) {
       </div>
       <div id={styles.bottomContainer}>
         <div className={getBottomTextDivClassName(props.mode, "home")}>
-          <h1 className={getBottomTextClassName(props.mode, "home")}>Home</h1>
+          <Link className={getBottomTextClassName(props.mode, "home")} to='/'>
+            Home
+          </Link>
         </div>
         <div className={getBottomTextDivClassName(props.mode, "archive")}>
-          <h1 className={getBottomTextClassName(props.mode, "archive")}>
+          <Link
+            className={getBottomTextClassName(props.mode, "archive")}
+            to='/archive'
+          >
             Archive
-          </h1>
+          </Link>
         </div>
         <div className={getBottomTextDivClassName(props.mode, "about")}>
-          <h1
+          <Link
             className={getBottomTextClassName(props.mode, "about")}
-            id={styles.aboutText}
+            to='/about'
           >
             About
-          </h1>
+          </Link>
         </div>
       </div>
     </div>
