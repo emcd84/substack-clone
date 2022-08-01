@@ -8,7 +8,7 @@ import Aboutpage from "./pages/Aboutpage";
 export default function RouteSwitch() {
   return (
     <BrowserRouter>
-      <MenuBar mode='home' />
+      <MenuBar />
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/archive' element={<Archivepage />} />
