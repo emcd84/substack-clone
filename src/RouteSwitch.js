@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { React, useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import MenuBar from "./components/MenuBar";
 import Homepage from "./pages/Homepage";
 import Archivepage from "./pages/Archivepage";
@@ -8,7 +8,7 @@ import Aboutpage from "./pages/Aboutpage";
 export default function RouteSwitch() {
   return (
     <BrowserRouter>
-      <MenuBar mode='about' />
+      <MenuBar mode='home' />
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/archive' element={<Archivepage />} />
