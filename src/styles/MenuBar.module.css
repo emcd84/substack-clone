@@ -59,6 +59,8 @@
 .bottomText {
     font-size: 0.9em;
     font-weight: normal;
+    color: black;
+    text-decoration: none;
 }
 
 .selectedDiv {
