@@ -1,0 +1,52 @@
+#container {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    padding: 1.5em;
+}
+
+#postImg {
+    background-color: rgba(0, 0, 0, 0.06);
+    height: 18.25em;
+    width: 27.375em;
+    margin-left: 1.5em;
+    margin-right: 3em;
+}
+
+#right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+}
+
+#titleText {
+    color: rgb(64, 64, 64);
+    font-size: 1.75em;
+}
+
+#subtitleText {
+    color: rgb(26, 26, 26);
+    font-size: 1.0625em;
+    font-weight: 400;
+}
+
+#authorAndImages {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75em;
+    align-items: center;
+}
+
+#authorText {
+    font-size: 0.75em;
+    color: rgb(128, 128, 128);
+    font-weight: 400;
+}
+
+.iconPath {
+    stroke-width: 2px;
+    stroke: rgb(128, 128, 128);
+    fill: none;
+    font-size: 1.1875em;
+    font-weight: 400;
+}
