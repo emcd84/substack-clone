@@ -1,6 +1,4 @@
-import { React, useState } from "react";
-import MenuBar from "../components/MenuBar";
-import { useLocation } from "react-router-dom";
+import { React } from "react";
 
 export default function Homepage() {
   return <div data-testid='Homepage'></div>;
