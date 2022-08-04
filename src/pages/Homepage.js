@@ -13,9 +13,9 @@ export default function Homepage() {
       />
       <PostPreview
         title='Miro Heiskanen and passive/aggressive forechecks'
-        subtitle="Tampa Bay limits Miro Heiskanen's transition abilities byp giving him more time to make a play, not less"
+        subtitle="Tampa Bay limits Miro Heiskanen's transition abilities by giving him more time to make a play, not less"
         author='DRAFTLOOKHOCKEY'
-        date='2022-08-01'
+        date='AUG 1, 2022'
       />
     </div>
   );
