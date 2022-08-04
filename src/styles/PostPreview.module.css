@@ -1,0 +1,73 @@
+#container {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    padding: 1.5em;
+    cursor: pointer;
+}
+
+#container:hover {
+    background-color: rgba(0, 0, 0, .02);
+    text-decoration: none;
+}
+
+#postImgEmpty {
+    background-color: rgba(0, 0, 0, 0.06);
+    height: 7.5625em;
+    width: 10.5em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    background-image: url('https://substackcdn.com/image/fetch/w_128,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FSubstackIcon%3Fheight%3D128%26fill%3D%2523DDDDDD%26stroke%3D%2523DDDDDD');
+    background-size: 4em;
+    overflow-wrap: break-word;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
+}
+
+#right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+#titleText {
+    color: rgb(64, 64, 64);
+    font-size: 1.125em;
+}
+
+#subtitleText {
+    color: rgb(102, 102, 102);
+    font-size: 1em;
+    font-weight: 400;
+}
+
+#authorDateAndImages {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75em;
+    align-items: center;
+}
+
+#authorText, #dateText {
+    font-size: 0.75em;
+    color: rgb(128, 128, 128);
+    font-weight: 400;
+}
+
+.icon {
+    border: 1px solid white;
+}
+
+.icon:hover {
+    background: #f5f5f5;
+    border: 1px solid #ededed;
+}
+
+.iconPath {
+    stroke-width: 2px;
+    stroke: rgb(128, 128, 128);
+    fill: none;
+    font-size: 1.1875em;
+    font-weight: 400;
+}
