@@ -17,6 +17,7 @@ export default function TopPostPreview(props) {
         <div id={styles.authorAndImages}>
           <h3 id={styles.authorText}>{props.author}</h3>
           <svg
+            className={styles.icon}
             viewBox='0 0 24 24'
             height='16'
             width='16'
@@ -31,6 +32,7 @@ export default function TopPostPreview(props) {
             ></path>
           </svg>
           <svg
+            className={styles.icon}
             viewBox='0 0 24 24'
             height='16'
             width='16'
@@ -45,6 +47,7 @@ export default function TopPostPreview(props) {
             ></path>
           </svg>
           <svg
+            className={styles.icon}
             viewBox='0 0 24 24'
             height='16'
             width='16'
