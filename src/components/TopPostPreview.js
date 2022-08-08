@@ -2,16 +2,21 @@ import React from "react";
 import styles from "../styles/TopPostPreview.module.css";
 
 export default function TopPostPreview(props) {
+  let postInfo = {};
+  if (props.post.length > 0) {
+    postInfo = props.post[0];
+  }
+
   return (
     <div id={styles.container}>
       <div id={styles.left}>
         <div id={styles.postImgEmpty}></div>
       </div>
       <div id={styles.right}>
-        <h1 id={styles.titleText}>{props.title}</h1>
-        <h2 id={styles.subtitleText}>{props.subtitle}</h2>
+        <h1 id={styles.titleText}>{postInfo.title}</h1>
+        <h2 id={styles.subtitleText}>{postInfo.subtitle}</h2>
         <div id={styles.authorAndImages}>
-          <h3 id={styles.authorText}>{props.author}</h3>
+          <h3 id={styles.authorText}>{postInfo.author}</h3>
           <svg
             className={styles.icon}
             viewBox='0 0 24 24'
