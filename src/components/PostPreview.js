@@ -15,7 +15,7 @@ export default function PostPreview(props) {
             {props.post.author.toUpperCase()}
           </h3>
           <h3 className={styles.authorAndDateText} id={styles.dateText}>
-            {props.post.date}
+            {props.post.publishDate}
           </h3>
           <svg
             className={styles.icon}
