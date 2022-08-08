@@ -8,14 +8,14 @@ export default function PostPreview(props) {
         <div id={styles.postImgEmpty}></div>
       </div>
       <div id={styles.right}>
-        <h1 id={styles.titleText}>{props.title}</h1>
-        <h2 id={styles.subtitleText}>{props.subtitle}</h2>
+        <h1 id={styles.titleText}>{props.post.title}</h1>
+        <h2 id={styles.subtitleText}>{props.post.subtitle}</h2>
         <div id={styles.authorDateAndImages}>
           <h3 className={styles.authorAndDateText} id={styles.authorText}>
-            {props.author}
+            {props.post.author.toUpperCase()}
           </h3>
           <h3 className={styles.authorAndDateText} id={styles.dateText}>
-            {props.date}
+            {props.post.date}
           </h3>
           <svg
             className={styles.icon}
