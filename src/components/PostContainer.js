@@ -6,7 +6,9 @@ export default function PostContainer(props) {
   return (
     <div id={styles.container}>
       <div id={styles.topBar}>
-        <span id={styles.newHeader}>New</span>
+        <span id={styles.newHeader} role='heading'>
+          New
+        </span>
         <svg
           id={styles.icon}
           role='img'
