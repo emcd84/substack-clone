@@ -5,11 +5,7 @@ export default function TopPostPreview(props) {
   return (
     <div id={styles.container}>
       <div id={styles.left}>
-        <img
-          id={styles.postImg}
-          src='https://substackcdn.com/image/fetch/w_128,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FSubstackIcon%3Fheight%3D128%26fill%3D%2523DDDDDD%26stroke%3D%2523DDDDDD'
-          alt='Default post image'
-        ></img>
+        <div id={styles.postImgEmpty}></div>
       </div>
       <div id={styles.right}>
         <h1 id={styles.titleText}>{props.title}</h1>
