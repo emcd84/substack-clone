@@ -16,7 +16,7 @@ export default function TopPostPreview(props) {
         <h1 id={styles.titleText}>{postInfo.title}</h1>
         <h2 id={styles.subtitleText}>{postInfo.subtitle}</h2>
         <div id={styles.authorAndImages}>
-          <h3 id={styles.authorText}>{postInfo.author}</h3>
+          <h3 id={styles.authorText}>{postInfo.author.toUpperCase()}</h3>
           <svg
             className={styles.icon}
             viewBox='0 0 24 24'
