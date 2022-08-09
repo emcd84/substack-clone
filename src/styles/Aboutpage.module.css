@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral&display=swap');
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#innerContainer {
+    width: 40%;
+}
+
+#menuDiv {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+#aboutHeader {
+    font-size: 0.875em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    height: 2.9375em;
+    box-shadow: rgb(0, 155, 80) 0px -2px 0px 0px inset;
+    color: rgb(0, 155, 80);
+    cursor: pointer;
+    letter-spacing: -0.0.01425em;
+    overflow-wrap: break-word;
+    white-space: nowrap;
+    width: 3.25em;
+}
+
+#header, #bioText {
+    color: rgb(26, 26, 26);
+}
+
+#header {
+    font-size: 2.375em;
+    margin: 0.75em 0;
+}
+
+#bioText {
+    font-size: 1.1875em;
+    line-height: 1.9em;
+    font-family: 'Spectral', serif;
+}
