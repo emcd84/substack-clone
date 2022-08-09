@@ -29,7 +29,7 @@ export default function RouteSwitch() {
       <MenuBar />
       <Routes>
         <Route path='/' element={<Homepage posts={posts} />} />
-        <Route path='/archive' element={<Archivepage />} />
+        <Route path='/archive' element={<Archivepage posts={posts} />} />
         <Route path='/about' element={<Aboutpage />} />
       </Routes>
     </BrowserRouter>
