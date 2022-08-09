@@ -7,6 +7,13 @@ export default function PostContainer(props) {
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [searchValue, setSearchValue] = useState("");
 
+  let mainPosts;
+  if (props.previewMode === true) {
+    mainPosts = props.posts.slice(1, props.posts.length);
+  } else {
+    mainPosts = props.posts;
+  }
+
   function filterPosts() {
     if (search === true && props.posts.length > 0) {
       let returnArray = [];
@@ -164,7 +171,7 @@ export default function PostContainer(props) {
           </svg>
         </div>
         <div id={styles.postsContainer}>
-          {props.posts.slice(1, props.posts.length).map((post) => {
+          {mainPosts.map((post) => {
             return <PostPreview key={post.id} post={post} />;
           })}
         </div>
