@@ -8,8 +8,10 @@ export default function PostContainer(props) {
   const [searchValue, setSearchValue] = useState("");
 
   let mainPosts;
-  if (props.previewMode === true) {
+  if (props.mode === "preview") {
     mainPosts = props.posts.slice(1, props.posts.length);
+  } else if (props.mode === "footer") {
+    mainPosts = props.posts.slice(0, 3);
   } else {
     mainPosts = props.posts;
   }
