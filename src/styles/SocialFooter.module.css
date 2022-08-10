@@ -1,0 +1,33 @@
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+#left {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+#iconDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    height: 2em;
+    width: 2em;
+}
+
+#icon {
+    stroke: rgb(102, 102, 102);
+}
+
+#likePostText {
+    font-size: 0.8333125em;
+    color: rgb(102, 102, 102);
+}
