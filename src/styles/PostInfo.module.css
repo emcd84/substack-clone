@@ -1,0 +1,39 @@
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: 1em;
+}
+
+#text {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+#authorImg {
+    border-radius: 50%;
+    box-sizing: border-box;
+    height: 2.375em;
+    object-fit: cover;
+}
+
+#authorAndDate {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+#postAuthor, #postDate {
+    font-size: 0.875em;
+}
+
+#postAuthor {
+    font-weight: 600;
+}
+
+#postDate {
+    font-weight: 400;
+    color: rgb(102, 102, 102);
+}
