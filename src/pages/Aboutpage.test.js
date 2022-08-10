@@ -2,7 +2,6 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Aboutpage from "./Aboutpage";
-import { wait } from "@testing-library/user-event/dist/utils";
 
 describe("Aboutpage component", () => {
   it("renders About heading", () => {
