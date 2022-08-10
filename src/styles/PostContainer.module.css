@@ -1,7 +1,7 @@
 #container {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 100%;
 }
 
 #topBar {
@@ -9,7 +9,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0 1.5em 0.75em 1.5em;
+    margin-bottom: 0.75em;
     border-bottom: 1px solid rgb(0, 0, 0, 0.1);
 }
 
