@@ -6,7 +6,7 @@ import PostContainer from "../components/PostContainer";
 export default function Homepage(props) {
   return (
     <div id={styles.container} data-testid='Homepage'>
-      <TopPostPreview post={props.posts.slice(0, 1)} />
+      {props.posts.length > 0 && <TopPostPreview post={props.posts[0]} />}
       <div id={styles.postContainerWrapper}>
         <PostContainer mode='preview' posts={props.posts} />
       </div>
