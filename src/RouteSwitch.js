@@ -6,10 +6,11 @@ import Archivepage from "./pages/Archivepage";
 import Aboutpage from "./pages/Aboutpage";
 import Post from "./pages/Post";
 import { db } from "./firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 
 export default function RouteSwitch() {
   const [posts, setPosts] = useState([]);
+  const [aboutText, setAboutText] = useState(null);
 
   async function getPostData() {
     const returnArray = [];
@@ -21,8 +22,20 @@ export default function RouteSwitch() {
     setPosts(returnArray);
   }
 
+  async function getAboutText() {
+    const docRef = doc(db, "siteInfo", "About");
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      setAboutText(docSnap.data().bio);
+    } else {
+      console.log("error");
+    }
+  }
+
   useEffect(() => {
     getPostData();
+    getAboutText();
   }, []);
 
   return (
@@ -31,7 +44,7 @@ export default function RouteSwitch() {
       <Routes>
         <Route path='/' element={<Homepage posts={posts} />} />
         <Route path='/archive' element={<Archivepage posts={posts} />} />
-        <Route path='/about' element={<Aboutpage />} />
+        <Route path='/about' element={<Aboutpage aboutText={aboutText} />} />
         {posts.map((post) => {
           return (
             <Route
