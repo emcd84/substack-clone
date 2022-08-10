@@ -1,0 +1,41 @@
+#container {
+    padding: 3em 0;
+    width: 40%;
+}
+
+#postTitle {
+    color: rgb(26, 26, 26);
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+#postSubtitle {
+    color: rgb(102, 102, 102);
+    font-size: 1.25em;
+    font-weight: 400;
+    margin: 1em 0;
+}
+
+#contentDiv {
+    color: rgb(26, 26, 26);
+    cursor: default;
+    font-size: 1.1875em;
+    line-height: 1.9em;
+    font-family: 'Spectral', serif;
+    padding: 1em 0;
+}
+
+#seeAllLink {
+    padding-top: 1em;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+#seeAllText {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.875em;
+    color:rgb(26, 26, 26);
+    font-weight: 400;
+}
