@@ -7,7 +7,9 @@ export default function Homepage(props) {
   return (
     <div id={styles.container} data-testid='Homepage'>
       <TopPostPreview post={props.posts.slice(0, 1)} />
-      <PostContainer previewMode={true} posts={props.posts} />
+      <div id={styles.postContainerWrapper}>
+        <PostContainer mode='preview' posts={props.posts} />
+      </div>
     </div>
   );
 }
