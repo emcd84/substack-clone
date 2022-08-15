@@ -5,6 +5,7 @@ import Homepage from "./pages/Homepage";
 import Archivepage from "./pages/Archivepage";
 import Aboutpage from "./pages/Aboutpage";
 import SignInPage from "./pages/SignInPage";
+import SignUpPage from "./pages/SignUpPage";
 import Post from "./pages/Post";
 import { db } from "./firebase";
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
@@ -57,6 +58,7 @@ export default function RouteSwitch() {
           })}
         </Route>
         <Route path='/signIn' element={<SignInPage />} />
+        <Route path='/signUp' element={<SignUpPage />} />
       </Routes>
     </BrowserRouter>
   );
