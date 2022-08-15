@@ -4,6 +4,7 @@ import MenuBar from "./components/MenuBar";
 import Homepage from "./pages/Homepage";
 import Archivepage from "./pages/Archivepage";
 import Aboutpage from "./pages/Aboutpage";
+import SignInPage from "./pages/SignInPage";
 import Post from "./pages/Post";
 import { db } from "./firebase";
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
@@ -40,20 +41,22 @@ export default function RouteSwitch() {
 
   return (
     <BrowserRouter>
-      <MenuBar />
       <Routes>
-        <Route path='/' element={<Homepage posts={posts} />} />
-        <Route path='/archive' element={<Archivepage posts={posts} />} />
-        <Route path='/about' element={<Aboutpage aboutText={aboutText} />} />
-        {posts.map((post) => {
-          return (
-            <Route
-              key={post.id}
-              path={`/posts/${post.id}`}
-              element={<Post post={post} posts={posts} />}
-            />
-          );
-        })}
+        <Route path='/' element={<MenuBar />}>
+          <Route path='/home' element={<Homepage posts={posts} />} />
+          <Route path='/archive' element={<Archivepage posts={posts} />} />
+          <Route path='/about' element={<Aboutpage aboutText={aboutText} />} />
+          {posts.map((post) => {
+            return (
+              <Route
+                key={post.id}
+                path={`/posts/${post.id}`}
+                element={<Post post={post} posts={posts} />}
+              />
+            );
+          })}
+        </Route>
+        <Route path='/signIn' element={<SignInPage />} />
       </Routes>
     </BrowserRouter>
   );
