@@ -1,6 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import PostContainer from "./PostContainer";
 
 describe("PostContainer component", () => {
@@ -27,7 +28,11 @@ describe("PostContainer component", () => {
   ];
   postArray.forEach((post) => {
     it(`renders post with title ${post.title}`, () => {
-      render(<PostContainer posts={postArray} />);
+      render(
+        <BrowserRouter>
+          <PostContainer posts={postArray} />
+        </BrowserRouter>
+      );
       expect(screen.getByText(post.title)).toBeInTheDocument();
     });
   });
