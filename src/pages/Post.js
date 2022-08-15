@@ -12,9 +12,7 @@ export default function Post(props) {
       <h2 id={styles.postSubtitle}>{props.post.subtitle}</h2>
       <PostInfo author={props.post.author} date={props.post.date} />
       <div id={styles.contentDiv}>
-        <p id={styles.contentText} role='content'>
-          {props.post.text}
-        </p>
+        <p id={styles.contentText}>{props.post.text}</p>
       </div>
       <SocialFooter />
       <PostContainer mode='footer' posts={props.posts} />
