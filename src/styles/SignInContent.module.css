@@ -48,8 +48,8 @@
     background-color: rgb(255, 103, 25);
     border: 1px rgb(255, 255, 255) solid;
     border-radius: 4px;
-    height: 3em;
-    width: 5em;
+    height: 48px;
+    min-width: 85px;
     padding: 0.875em 1em;
     display: inline-block;
     color: white;
@@ -78,4 +78,10 @@
 
 #signUpLink {
     color: rgb(255, 103, 25);
+}
+
+#failedText {
+    color: rgb(239, 7, 0);
+    font-size: 0.875em;
+    margin-top: 0.25em;
 }
