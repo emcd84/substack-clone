@@ -4,7 +4,7 @@ import styles from "../styles/PostPreview.module.css";
 
 export default function PostPreview(props) {
   return (
-    <Link id={styles.link} to={`/posts/${props.post.id}`}>
+    <Link id={styles.link} to={`../posts/${props.post.id}`}>
       <div id={styles.container}>
         <div id={styles.left}>
           <div id={styles.postImgEmpty}></div>
