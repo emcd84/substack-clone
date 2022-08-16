@@ -24,18 +24,3 @@
     font-family: 'Spectral', serif;
     padding: 1em 0;
 }
-
-#seeAllLink {
-    padding-top: 1em;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-#seeAllText {
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 0.875em;
-    color:rgb(26, 26, 26);
-    font-weight: 400;
-}
