@@ -9,10 +9,21 @@ import SignUpPage from "./pages/SignUpPage";
 import Post from "./pages/Post";
 import { db } from "./firebase";
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default function RouteSwitch() {
   const [posts, setPosts] = useState([]);
   const [aboutText, setAboutText] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      if (loggedIn === false) setLoggedIn(true);
+    } else {
+      if (loggedIn === true) setLoggedIn(false);
+    }
+  });
 
   async function getPostData() {
     const returnArray = [];
@@ -43,7 +54,7 @@ export default function RouteSwitch() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<MenuBar />}>
+        <Route path='/' element={<MenuBar loggedIn={loggedIn} />}>
           <Route path='/home' element={<Homepage posts={posts} />} />
           <Route path='/archive' element={<Archivepage posts={posts} />} />
           <Route path='/about' element={<Aboutpage aboutText={aboutText} />} />
