@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from "react";
 import PostPreview from "./PostPreview";
 import styles from "../styles/PostContainer.module.css";
+import { Link } from "react-router-dom";
 
 export default function PostContainer(props) {
   const [search, setSearch] = useState(false);
@@ -177,6 +178,31 @@ export default function PostContainer(props) {
             return <PostPreview key={post.id} post={post} />;
           })}
         </div>
+        {(props.mode === "preview" || props.mode === "footer") && (
+          <Link id={styles.seeAllLink} to='/archive'>
+            <h3 id={styles.seeAllText}>See All</h3>
+            <svg
+              role='img'
+              width='12'
+              height='12'
+              viewBox='0 0 20 20'
+              fill='none'
+              strokeWidth='1'
+              stroke='#000'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <g>
+                <title></title>
+                <path
+                  d='M7.5 15L12.5 10L7.5 5'
+                  strokeWidth='1.5'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                ></path>
+              </g>
+            </svg>
+          </Link>
+        )}
       </div>
     );
   }
