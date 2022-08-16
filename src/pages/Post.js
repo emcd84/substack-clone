@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PostInfo from "../components/PostInfo";
 import SocialFooter from "../components/SocialFooter";
 import PostContainer from "../components/PostContainer";
+import CommentSection from "../components/CommentSection";
 import styles from "../styles/Post.module.css";
 
 export default function Post(props) {
@@ -15,6 +16,7 @@ export default function Post(props) {
         <p id={styles.contentText}>{props.post.text}</p>
       </div>
       <SocialFooter />
+      <CommentSection />
       <PostContainer mode='footer' posts={props.posts} />
     </div>
   );
