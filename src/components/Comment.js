@@ -1,9 +1,17 @@
-import React from "react";
+import { React, useState } from "react";
 import styles from "../styles/Comment.module.css";
+import CommentBox from "./CommentBox";
+import CommentReplies from "./CommentReplies";
 
 export default function Comment(props) {
+  const [commentBoxDisplayed, setCommentBoxDisplayed] = useState(false);
+
+  function cancelCommentBox() {
+    setCommentBoxDisplayed(false);
+  }
+
   return (
-    <div id={styles.container}>
+    <div className={styles.container}>
       <div id={styles.left}>
         <img
           id={styles.img}
@@ -50,9 +58,18 @@ export default function Comment(props) {
             </svg>
             <h4 className={styles.footerText}>{props.comment.likes}</h4>
           </div>
-          <h4 className={styles.footerText}>Reply</h4>
+          <h4
+            className={styles.footerText}
+            onClick={() => setCommentBoxDisplayed(true)}
+          >
+            Reply
+          </h4>
           <h4 className={styles.footerText}>Collapse</h4>
         </div>
+        {commentBoxDisplayed && (
+          <CommentBox type='child' cancelCommentBox={cancelCommentBox} />
+        )}
+        <CommentReplies type={props.type} replies={props.comment.replies} />
       </div>
     </div>
   );
