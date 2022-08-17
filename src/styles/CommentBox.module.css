@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5em;
+    padding: 1em 0;
 }
 
 #commentBox {
@@ -15,7 +16,7 @@
     height: 2em;
 }
 
-#commentInput {
+.commentInput {
     height: 6.5em;
     width: 100%;
     border: none;
@@ -27,18 +28,21 @@
     resize: none;
 }
 
-#commentInput:focus {
+
+#parentInput:focus {
     outline: 2px solid #009b50;
 }
 
-#buttonContainer {
+#childInput:focus {
+    outline: 2px solid rgb(209, 0, 0);
+}
+
+.buttonContainer {
     display: flex;
     justify-content: flex-end;
 }
 
-#postButton {
-    background-color: rgb(0, 155, 80);
-    color: white;
+.postButton {
     border: none;
     border-radius: 4px;
     padding: 0 1.5em;
@@ -48,5 +52,24 @@
     height: 2.5em;
     font-size: 0.875em;
     font-weight: 600;
-
+    cursor: pointer;
 }
+
+#parentPostButton, #childPostButton {
+    color: white;
+}
+
+#parentPostButton {
+    background-color: rgb(0, 155, 80);
+}
+
+#childPostButton {
+    background-color: rgb(209, 0, 0);
+}
+
+#childCancelButton {
+    color: rgb(102, 102, 102);
+    background-color: white;
+}
+
+
