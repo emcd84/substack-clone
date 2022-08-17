@@ -38,7 +38,7 @@ export default function MenuBar(props) {
         <div id={styles.bottomContainer}>
           <NavLink
             className={(isActive) => generateNavLinkClassName(isActive)}
-            to='/home'
+            to='/'
           >
             Home
           </NavLink>
