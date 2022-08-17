@@ -9,15 +9,24 @@ export default function CommentSection(props) {
       date: "08/01/2022",
       content: "Well done!",
       likes: 3,
+      replies: [
+        {
+          author: "Donald",
+          date: "08/01/2022",
+          content: "Agreed.",
+          likes: 0,
+          replies: [],
+        },
+      ],
     },
   ];
 
   return (
     <div>
       <h1>Comments</h1>
-      <CommentBox />
+      <CommentBox type='parent' />
       {comments.map((comment) => {
-        return <Comment comment={comment} />;
+        return <Comment type='topLevel' comment={comment} />;
       })}
     </div>
   );
