@@ -55,7 +55,7 @@ export default function RouteSwitch() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<MenuBar loggedIn={loggedIn} />}>
-          <Route path='/home' element={<Homepage posts={posts} />} />
+          <Route index element={<Homepage posts={posts} />} />
           <Route path='/archive' element={<Archivepage posts={posts} />} />
           <Route path='/about' element={<Aboutpage aboutText={aboutText} />} />
           {posts.map((post) => {
