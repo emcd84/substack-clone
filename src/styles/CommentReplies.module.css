@@ -1,0 +1,17 @@
+#notDisplayed {
+    border-left: 2px solid #e0e0e0;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+#numRepliesText {
+    font-size: 0.8125em;
+    color: rgb(102, 102, 102);
+    padding: 1em;
+}
+
+#collapseRepliesText {
+    font-size: 0.8125em;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+}
