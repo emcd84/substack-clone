@@ -4,7 +4,7 @@ import Comment from "./Comment";
 
 export default function CommentReplies(props) {
   const [repliesDisplayed, setRepliesDisplayed] = useState(false);
-  if (!repliesDisplayed && props.type === "topLevel") {
+  if (!repliesDisplayed) {
     return (
       <div id={styles.notDisplayed} onClick={() => setRepliesDisplayed(true)}>
         <h1 id={styles.numRepliesText}>{`${props.replies.length} replies`}</h1>
@@ -14,7 +14,16 @@ export default function CommentReplies(props) {
     return (
       <div id={styles.displayed}>
         {props.replies.map((reply) => {
-          return <Comment comment={reply} />;
+          return (
+            <Comment
+              postId={props.postId}
+              getComments={props.getComments}
+              type='child'
+              key={reply.id}
+              comment={reply}
+              parentComment={props.parentComment}
+            />
+          );
         })}
         <h1
           id={styles.collapseRepliesText}

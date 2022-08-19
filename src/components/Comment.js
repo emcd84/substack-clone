@@ -25,6 +25,7 @@ export default function Comment(props) {
         <div id={styles.commentHeader}>
           <h1 id={styles.authorText}>{props.comment.author}</h1>
           <h2 id={styles.dateText}>{props.comment.date}</h2>
+          <h2 id={styles.dateText}>{props.comment.id}</h2>
         </div>
         <p id={styles.contentText}>{props.comment.content}</p>
         <div id={styles.commentFooter}>
@@ -67,9 +68,23 @@ export default function Comment(props) {
           <h4 className={styles.footerText}>Collapse</h4>
         </div>
         {commentBoxDisplayed && (
-          <CommentBox type='child' cancelCommentBox={cancelCommentBox} />
+          <CommentBox
+            type='child'
+            postId={props.postId}
+            commentId={props.comment.id}
+            cancelCommentBox={cancelCommentBox}
+            getComments={props.getComments}
+            parentComment={`${props.parentComment} ${props.comment.id}`.trim()}
+          />
         )}
-        <CommentReplies type={props.type} replies={props.comment.replies} />
+        <CommentReplies
+          postId={props.postId}
+          commentId={props.comment.id}
+          type={props.type}
+          replies={props.comment.replies}
+          getComments={props.getComments}
+          parentComment={`${props.parentComment} ${props.comment.id}`.trim()}
+        />
       </div>
     </div>
   );
