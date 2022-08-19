@@ -16,7 +16,7 @@ export default function Post(props) {
         <p id={styles.contentText}>{props.post.text}</p>
       </div>
       <SocialFooter />
-      <CommentSection />
+      <CommentSection postId={props.post.id} />
       <PostContainer mode='footer' posts={props.posts} />
     </div>
   );
