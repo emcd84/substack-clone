@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import TopBar from "./components/TopBar";
 import MenuBar from "./components/MenuBar";
 import Homepage from "./pages/Homepage";
 import Archivepage from "./pages/Archivepage";
@@ -54,20 +55,23 @@ export default function RouteSwitch() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<MenuBar loggedIn={loggedIn} />}>
+        <Route path='/' element={<TopBar mode='main' loggedIn={loggedIn} />}>
           <Route index element={<Homepage posts={posts} />} />
           <Route path='/archive' element={<Archivepage posts={posts} />} />
           <Route path='/about' element={<Aboutpage aboutText={aboutText} />} />
+        </Route>
+        <Route path='/' element={<TopBar mode='post' loggedIn={loggedIn} />}>
           {posts.map((post) => {
             return (
               <Route
                 key={post.id}
-                path={`/posts/${post.id}`}
+                path={`posts/${post.id}`}
                 element={<Post post={post} posts={posts} />}
               />
             );
           })}
         </Route>
+
         <Route path='/signIn' element={<SignInPage />} />
         <Route path='/signUp' element={<SignUpPage />} />
       </Routes>
