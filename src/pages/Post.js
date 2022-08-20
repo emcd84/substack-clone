@@ -8,16 +8,18 @@ import styles from "../styles/Post.module.css";
 
 export default function Post(props) {
   return (
-    <div id={styles.container}>
-      <h1 id={styles.postTitle}>{props.post.title}</h1>
-      <h2 id={styles.postSubtitle}>{props.post.subtitle}</h2>
-      <PostInfo author={props.post.author} date={props.post.date} />
-      <div id={styles.contentDiv}>
-        <p id={styles.contentText}>{props.post.text}</p>
+    <div id={styles.outerContainer}>
+      <div id={styles.container}>
+        <h1 id={styles.postTitle}>{props.post.title}</h1>
+        <h2 id={styles.postSubtitle}>{props.post.subtitle}</h2>
+        <PostInfo author={props.post.author} date={props.post.date} />
+        <div id={styles.contentDiv}>
+          <p id={styles.contentText}>{props.post.text}</p>
+        </div>
+        <SocialFooter />
+        <CommentSection postId={props.post.id} />
+        <PostContainer mode='footer' posts={props.posts} />
       </div>
-      <SocialFooter />
-      <CommentSection postId={props.post.id} />
-      <PostContainer mode='footer' posts={props.posts} />
     </div>
   );
 }
