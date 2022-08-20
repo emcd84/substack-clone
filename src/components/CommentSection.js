@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import styles from "../styles/CommentSection.module.css";
 import CommentBox from "./CommentBox";
 import Comment from "./Comment";
 import { doc, getDoc } from "firebase/firestore";
@@ -41,7 +42,7 @@ export default function CommentSection(props) {
   }, []);
 
   return (
-    <div>
+    <div id={styles.container}>
       <h1>Comments</h1>
       <CommentBox
         getComments={getComments}
