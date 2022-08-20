@@ -16,6 +16,15 @@ export default function RouteSwitch() {
   const [posts, setPosts] = useState([]);
   const [aboutText, setAboutText] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [postLiked, setPostLiked] = useState(false);
+
+  function togglePostLiked() {
+    if (postLiked === true) {
+      setPostLiked(false);
+    } else {
+      setPostLiked(true);
+    }
+  }
 
   const auth = getAuth();
   onAuthStateChanged(auth, (user) => {
@@ -66,7 +75,16 @@ export default function RouteSwitch() {
               <Route
                 key={post.id}
                 path={`posts/${post.id}`}
-                element={<Post post={post} posts={posts} />}
+                element={
+                  <Post
+                    key={post.id}
+                    post={post}
+                    posts={posts}
+                    postLiked={postLiked}
+                    togglePostLiked={togglePostLiked}
+                    getPostData={getPostData}
+                  />
+                }
               />
             );
           })}

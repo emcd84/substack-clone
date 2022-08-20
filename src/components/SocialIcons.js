@@ -1,10 +1,46 @@
 import React from "react";
 import styles from "../styles/SocialIcons.module.css";
 
-export default function SocialIcons() {
+export default function SocialIcons(props) {
+  function getLikeIconDivClass() {
+    if (props.likes === 0 && !props.postLiked) {
+      return `${styles.iconDiv}`;
+    } else {
+      return `${styles.iconDiv} ${styles.iconWithLabelDiv}`;
+    }
+  }
+
+  function getLikeIconDivID() {
+    if (props.postLiked === true) {
+      return styles.likedIconDiv;
+    } else {
+      return styles.notLikedIconDiv;
+    }
+  }
+
+  function getLikedIconID() {
+    if (props.postLiked === true) {
+      return styles.likedIcon;
+    } else {
+      return styles.notLikedIcon;
+    }
+  }
+
+  function getLikedLabelID() {
+    if (props.postLiked === true) {
+      return styles.likedLabel;
+    } else {
+      return styles.notLikedLabel;
+    }
+  }
+
   return (
     <div id={styles.icons}>
-      <div className={styles.iconDiv}>
+      <div
+        id={getLikeIconDivID()}
+        className={getLikeIconDivClass()}
+        onClick={props.likeOrUnlikePost}
+      >
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='24'
@@ -14,9 +50,20 @@ export default function SocialIcons() {
           strokeLinecap='round'
           strokeLinejoin='round'
           className={styles.icon}
+          id={getLikedIconID()}
         >
           <path d='M20.42 4.58a5.4 5.4 0 00-7.65 0l-.77.78-.77-.78a5.4 5.4 0 00-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z'></path>
         </svg>
+        {props.postLiked && (
+          <h1 className={styles.label} id={getLikedLabelID()}>
+            {props.likes + 1}
+          </h1>
+        )}
+        {!props.postLiked && props.likes > 0 && (
+          <h1 className={styles.label} id={getLikedLabelID()}>
+            {props.likes}
+          </h1>
+        )}
       </div>
       <div className={styles.iconDiv}>
         <svg

@@ -15,7 +15,12 @@ export default function PostInfo(props) {
           <h4 id={styles.postDate}>{props.date}</h4>
         </div>
       </div>
-      <SocialIcons />
+      <SocialIcons
+        likes={props.likes}
+        likeOrUnlikePost={props.likeOrUnlikePost}
+        postLiked={props.postLiked}
+        togglePostLiked={props.togglePostLiked}
+      />
     </div>
   );
 }
