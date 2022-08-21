@@ -47,6 +47,7 @@ export default function SocialFooter(props) {
       )}
       <SocialIcons
         likes={props.likes}
+        comments={props.comments}
         likeOrUnlikePost={props.likeOrUnlikePost}
         postLiked={props.postLiked}
         togglePostLiked={props.togglePostLiked}

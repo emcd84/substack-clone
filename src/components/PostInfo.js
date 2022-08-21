@@ -17,6 +17,7 @@ export default function PostInfo(props) {
       </div>
       <SocialIcons
         likes={props.likes}
+        comments={props.comments}
         likeOrUnlikePost={props.likeOrUnlikePost}
         postLiked={props.postLiked}
         togglePostLiked={props.togglePostLiked}
