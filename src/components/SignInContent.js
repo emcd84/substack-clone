@@ -21,7 +21,7 @@ export default function SignInContent() {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        navigate("/home");
+        navigate("/");
       })
       .catch((error) => {
         setLogInFail(true);
