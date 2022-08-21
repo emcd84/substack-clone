@@ -5,6 +5,15 @@ import { useNavigate } from "react-router-dom";
 
 export default function NewsletterHeader(props) {
   const navigate = useNavigate();
+
+  function getButtonContainerClass() {
+    if (props.subscribed === true) {
+      return `${styles.buttonContainer} ${styles.subscribedButtonContainer}`;
+    } else {
+      return styles.buttonContainer;
+    }
+  }
+
   return (
     <div id={styles.container} data-testid='MenuBar'>
       <div id={styles.headerContainer}>
@@ -12,8 +21,15 @@ export default function NewsletterHeader(props) {
           My Newsletter
         </h1>
       </div>
-      <div id={styles.buttonContainer}>
-        <button id={styles.subscribeButton}>Subscribe</button>
+      <div className={getButtonContainerClass()}>
+        {!props.subscribed && (
+          <button
+            id={styles.subscribeButton}
+            onClick={() => navigate("/subscribe")}
+          >
+            Subscribe
+          </button>
+        )}
         {!props.loggedIn && (
           <button id={styles.signInButton} onClick={() => navigate("/signIn")}>
             Sign In

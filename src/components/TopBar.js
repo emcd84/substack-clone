@@ -9,7 +9,10 @@ export default function TopBar(props) {
     return (
       <div id={styles.container}>
         <div>
-          <NewsletterHeader loggedIn={props.loggedIn} />
+          <NewsletterHeader
+            loggedIn={props.loggedIn}
+            subscribed={props.subscribed}
+          />
           <MenuBar />
         </div>
         <Outlet />
@@ -18,7 +21,7 @@ export default function TopBar(props) {
   } else if (props.mode === "post") {
     return (
       <div id={styles.container}>
-        <NewsletterHeader />
+        <NewsletterHeader subscribed={props.subscribed} />
         <Outlet />
       </div>
     );

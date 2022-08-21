@@ -7,6 +7,7 @@ import Archivepage from "./pages/Archivepage";
 import Aboutpage from "./pages/Aboutpage";
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
+import Subscribepage from "./pages/Subscribepage";
 import Post from "./pages/Post";
 import { db } from "./firebase";
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
@@ -17,6 +18,11 @@ export default function RouteSwitch() {
   const [aboutText, setAboutText] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const [postLiked, setPostLiked] = useState(false);
+  const [subscribed, setSubscribed] = useState(false);
+
+  function subscribe() {
+    setSubscribed(true);
+  }
 
   function togglePostLiked() {
     if (postLiked === true) {
@@ -64,12 +70,22 @@ export default function RouteSwitch() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<TopBar mode='main' loggedIn={loggedIn} />}>
+        <Route
+          path='/'
+          element={
+            <TopBar mode='main' loggedIn={loggedIn} subscribed={subscribed} />
+          }
+        >
           <Route index element={<Homepage posts={posts} />} />
           <Route path='/archive' element={<Archivepage posts={posts} />} />
           <Route path='/about' element={<Aboutpage aboutText={aboutText} />} />
         </Route>
-        <Route path='/' element={<TopBar mode='post' loggedIn={loggedIn} />}>
+        <Route
+          path='/'
+          element={
+            <TopBar mode='post' loggedIn={loggedIn} subscribed={subscribed} />
+          }
+        >
           {posts.map((post) => {
             return (
               <Route
@@ -92,6 +108,10 @@ export default function RouteSwitch() {
 
         <Route path='/signIn' element={<SignInPage />} />
         <Route path='/signUp' element={<SignUpPage />} />
+        <Route
+          path='/subscribe'
+          element={<Subscribepage subscribe={subscribe} />}
+        />
       </Routes>
     </BrowserRouter>
   );
