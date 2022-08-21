@@ -21,7 +21,10 @@ export default function TopBar(props) {
   } else if (props.mode === "post") {
     return (
       <div id={styles.container}>
-        <NewsletterHeader subscribed={props.subscribed} />
+        <NewsletterHeader
+          loggedIn={props.loggedIn}
+          subscribed={props.subscribed}
+        />
         <Outlet />
       </div>
     );
