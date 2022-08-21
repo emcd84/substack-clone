@@ -71,6 +71,7 @@
     padding: 0 1em;
     font-weight: bold;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 #subscribeButton {
